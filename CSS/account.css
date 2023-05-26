@@ -1,0 +1,703 @@
+:root {
+    --main-color: #8e44ad;
+    --red: #e74c3c;
+    --orange: #f39c12;
+    --white: #fff;
+    --black: #2c3e50;
+    --light-color: #888;
+    --light-bg: #eee;
+    --border:.1rem solid rgba(0,0,0,.2);
+}
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+*::selection {
+    background-color: var(--main-color);
+    color: #fff;
+}
+*::-webkit-scrollbar {
+    height: .5rem;
+    width: 1rem;
+}
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--light-color);
+}
+html {
+    font-size: 44.5%;
+}
+body {
+    background-color: var(--light-bg);
+    padding-left: 30rem;
+}
+body.dark {
+    --white: #222;
+    --black: #fff;
+    --light-color: #aaa;
+    --light-bg: #333;
+    --border:.1rem solid rgba(255,255,255,.2);
+}
+body.active {
+    padding: 0;
+}
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.flex-btn {
+    display: flex;
+    gap: 1rem;
+}
+.heading {
+    padding-bottom: 1.8rem;
+    border-bottom: var(--border);
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.header {
+    background-color: var(--white);
+    border-bottom: var(--border);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header .flex {
+    padding: 1.5rem 2rem;
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.header .flex .logo {
+    font-size: 3rem;
+    color: var(--light-color);
+    font-weight: bolder;
+}
+.header .flex .search-form {
+    width: 50rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 1.5rem;
+    background-color: var(--light-bg);
+}
+.header .flex .search-form input {
+    width: 100%;
+    background: none;
+    font-size: 2rem;
+    color: var(--black);
+}
+.header .flex .search-form button {
+    font-size: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+    background: none;
+}
+.header .flex .search-form button {
+    color: var(--main-color);
+}
+.header .flex .icons button {
+    font-size: 2rem;
+    color: var(--black);
+    border-radius: .5rem;
+    height: 4.5rem;
+    cursor: pointer;
+    width: 4.5rem;
+    line-height: 4.4rem;
+    background-color: var(--light-bg);
+    text-align: center;
+    margin-left: .5rem;
+}
+.header .flex .icons button:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+#search-btn {
+    display: none;
+}
+.header .flex .profile {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    width: 30rem;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .2s linear;
+}
+.header .flex .profile.active {
+    transform: scale(1);
+}
+.header .flex .profile img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+.header .flex .profile h3 {
+    font-size: 2rem;
+    color: var(--black);
+}
+.header .flex .profile span {
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 30rem;
+    background-color: var(--white);
+    border-right: var(--border);
+    transition: .2s linear;
+    z-index: 1200;
+}
+.side-bar.active {
+    left: -31rem;
+}
+.side-bar .close-side-bar {
+    text-align: right;
+    padding: 2rem;
+    padding-bottom: 0;
+    display: none;
+}
+.side-bar .close-side-bar i {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.4rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--red);
+    text-align: center;
+    border-radius: .5rem;
+}
+.side-bar .close-side-bar i:hover {
+    background-color: var(--black);
+}
+.side-bar .profile {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.side-bar .profile img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+.side-bar .profile h3 {
+    font-size: 2rem;
+    color: var(--black);
+}
+.side-bar .profile span {
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+.side-bar .navbar {
+    margin-top: 1rem;
+}
+.side-bar .navbar a {
+    display: block;
+    padding: 1.5rem 0;
+    margin: .5rem 0;
+    font-size: 2.5rem;
+}
+.side-bar .navbar a i {
+    color: var(--main-color);
+    margin-right: 1.5rem;
+    transition: .2s linear;
+}
+.side-bar .navbar a span {
+    color: var(--light-color);
+}
+.side-bar .navbar a:hover {
+    background-color: var(--light-bg);
+}
+.side-bar .navbar a:hover i {
+    margin-right: 2.5rem;
+}
+.side-bar .profile .btn {
+    background-color: var(--main-color);
+    display: block;
+    width: 82%;
+    border-radius: .5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-top: 1rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center;
+}
+.side-bar .profile .btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.account {
+    margin-bottom: 50px;
+    width: 100%;
+}
+.account-heading {
+    color: var(--light-color);
+    font-size: 3rem;
+    padding: 5px 10px;
+}
+.account .head {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.head .title {
+    margin-right: 20px;
+    font-size: 2.3rem;
+    color: var(--black);
+}
+.head .title span {
+    background-color: var(--main-color);
+    padding: 8px;
+    color: var(--white);
+    border-radius: 10px;
+}
+.account-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    background-color: var(--light-bg);
+}
+.account .head {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.head i {
+    font-size: 3.5rem;
+    cursor: pointer;
+}
+.account1 {
+    height: 90rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 60%;
+}
+.account1 .box {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.account1 .box span {
+    font-size: 2.5rem;
+    font-weight: 550;
+    color: var(--black);
+}
+.bg {
+    background-color: var(--red);
+    height: 15rem;
+    width: 100%;
+}
+.account-section .notify {
+    flex: 1 1 40rem;
+    position: absolute;
+    height: 0px;
+    opacity: 0;
+    margin-left: 60%;
+    background-color: var(--light-bg);
+}
+.notify .hello {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--black);
+    cursor: pointer;
+    width: 10em;
+    margin: 10px 30px;
+}
+.notify .notification-box {
+    margin-top: 40px;
+    margin-left: 1em;
+    display: block;
+}
+.notification-box .notif_card  {
+    display: block;
+    padding: 13px;
+}
+.notification-box .unread1 {
+    background-color: var(--white);
+    height: 18rem;
+}
+.notif_card img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin-bottom: .5rem;
+}
+.notif_card p {
+    font-size: 2.1rem;
+}
+.notification-box .text {
+    font-size: 2rem;
+    border: 1px solid var(--black);
+    margin-left: 20px;
+    color: var(--black);
+}
+.notif_card h3 {
+    color: var(--black);
+    font-size: 2.7rem;
+    font-weight: 650;
+}
+.notif_card h3 p {
+    color: var(--black);
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+.box span p {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 3px 0;
+}
+.box a {
+    color: var(--red);
+    font-size: 2.8rem;
+    font-weight: 550;
+}
+.account2 {
+    background-color: var(--light-bg);
+    height: 10rem;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+.account2 span {
+    font-size: 2.5rem;
+    font-weight: 550;
+    color: var(--black);
+}
+.account2 p {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 3px 0;
+}
+.account-heading2 {
+    color: var(--light-color);
+    font-size: 3rem;
+    padding: 15px 20px;
+    text-transform: uppercase;
+}
+.account3 {
+    background-color: var(--light-bg);
+    height: 25rem;
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.account-heading3 {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--light-color);
+    margin-bottom: 5px;
+}
+.account-heading3 h2 {
+    color: var(--light-color);
+    font-size: 3rem;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+.account-heading3 a {
+    color: var(--red);
+    font-size: 3rem;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.account-heading3 .notifi-box {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    background-color: var(--white);
+    padding: 10px 15px;
+    height: 0px;
+    opacity: 0;
+    width: 25%;
+    border-radius: 10px;
+    transform-origin: right bottom;
+    transition: .2s linear;
+    box-shadow: 0 0 0 100vw rgba(0,0,0,.7);
+}
+.account-heading3 .notifi-box h2 {
+    font-size: 2.2rem;
+    color: var(--black);
+}
+.account-heading3 .notifi-box input {
+    width: 90%;
+    padding: 10px 5px;
+    margin-left: 5px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 1px solid var(--black);
+}
+.account-heading3 .notifi-box button {
+    padding: 8px;
+    margin: 15px 15rem;
+    border-radius: 5px;
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--red);
+}
+.account-heading3 .notifi-box button:hover {
+    background-color: var(--main-color);
+}
+.account-heading4 {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    border-bottom: 1px solid var(--light-color);
+}
+.account-heading4 h3 {
+    font-size: 2.8rem;
+    color: var(--light-color);
+    padding: 8px 10px;
+}
+.account-heading5 {
+    display: grid;
+    grid-template-columns: 39% 10% 0;
+}
+.account-heading5 p {
+    color: var(--black);
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-top: 15px;
+}
+.account-heading5 .account-btn {
+    color: var(--white);
+    background-color: var(--red);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 2px 0;
+    cursor: pointer;
+}
+.account3 p {
+    color: var(--black);
+    font-size: 2.8rem;
+    margin-top: 25px;
+}
+.account3 p a {
+    color: var(--red);
+}
+.account4 {
+    background-color: var(--light-bg);
+    height: 40rem;
+    padding: 30px 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.account4 h3 {
+    color: var(--black);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.account4 ol {
+    padding: 10px 25px;
+}
+.account4 ol li {
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 5px;
+}
+.account4 p {
+    font-size: 2.6rem;
+    color: var(--black);
+    cursor: pointer;
+}
+.account4 .account-btn {
+    background-color: var(--red);
+    color: var(--white);
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.notify {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+.account-btn:hover {
+    background-color: var(--main-color);
+}
+
+.contacts-reviews {
+    display: flex;
+    width: 100%;
+    gap: 8rem;
+}
+.contacts {
+    width: 25%; 
+    height: 15rem;
+    margin-top: 30px;
+    padding: 20px 5px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.1);
+}
+.contacts i {
+    font-size: 3.5rem;
+    color: var(--main-color);
+}
+.contacts span {
+    color: var(--black);
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+.contact-container {
+    display: grid;
+    grid-template-columns: 60% 50%;
+    grid-gap: 3rem;
+    height: 50rem;
+    margin-top: 40px;
+}
+.contact-map {
+    border-radius: 15px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.1);
+}
+.contact-form {
+    border-radius: 15px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.1);
+    padding: 10px;
+    gap: 2.5rem;
+}
+.contact-form input {
+    width: 60%;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: 0.1rem solid var(--black);
+}
+.contact-form textarea {
+    width: 100%;
+    height: 10rem;
+    padding: 20px 15px;
+    border: 0.1rem solid var(--black);
+}
+.contact-form button {
+    width: 80px;
+    height: 40px;
+    background-color: #7ed386;
+    font-size: 1.5em;
+    /*transform: rotate(-90deg);
+    transition: all 0.5s ease-in-out;*/
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 30rem;
+} 
+.contact-form button:hover {
+    background-color: #3fb6a8;
+    transform: scale(1.1);
+}
+.container {
+    background-color: var(--light-bg);
+    width: 450px;
+    height: 420px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10%;
+    box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.5);
+    overflow: hidden;
+}
+.footer {
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--white);
+    border-top: var(--border);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: var(--black);
+    font-size: 2rem;
+    margin-top: 2rem;
+    z-index: 1000;
+}
+.footer div {
+    color: var(--main-color);
+}
+
+@media (max-width: 850px) {
+    .contacts-reviews {
+        display: block;
+        width: 100%;
+    }
+    .contacts {
+        width: 75%; 
+        height: 18rem;
+        text-align: center;
+    }
+    .contact-container {
+        display: block;
+        grid-gap: 3rem;
+        height: 50rem;
+    }
+    .contact-map {
+        border-radius: 15px;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.1);
+    }
+    .contact-form {
+        border-radius: 15px;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.1);
+        padding: 10px;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .account-heading3 a {
+        display: none;
+    }
+    .account-heading5 .account-btn {
+        display: none;
+    }
+    .account4 {
+        height: 45rem;
+    }
+    .account1 {
+        height: 50rem;
+        width: 100%;
+    }
+}@media (max-width: 990px) {
+    .side-bar .close-side-bar {
+        display: block;
+    }
+    body {
+        padding-left: 0;
+    }
+    .side-bar {
+        transition: .2s linear;
+        left: -30rem;
+    }
+    .side-bar.active {
+        left: 0;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,.7);
+    }
+    .contact-form {
+        margin-top: 30px;
+    }
+}

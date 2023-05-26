@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="CSS/account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <a href="home.html" class="logo">CR.</a>
+
+            <div class="icons">
+                <button id="menu-btn"><i class="fa-solid fa-bars"></i></button>
+                <button id="toggle-btn"><i class="fa-solid fa-gear"></i></button>
+            </div>
+
+            <div class="profile">
+                <img src="images/user.jpg">
+                <h3>shaikh anas</h3>
+                <span>student</span>
+                <a href="profile.html" class="btn">view profile</a>
+                <div class="flex-btn">
+                    <a href="login.html" class="option-btn">login</a>
+                    <a href="register.html" class="option-btn">register</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="side-bar">
+            <div class="close-side-bar">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="profile">
+                <img src="images/user.jpeg">
+                <h3>shaikh anas</h3>
+                <span>student</span>
+                <a href="profile.html" class="btn">view profile</a>
+                <div class="navbar">
+                    <a href="chart.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                    <a href="contact.html"><i class="fa-solid fa-house"></i><span>Contact</span></a>
+                    <a href="settings.html#password"><i class="fa-solid fa-house"></i><span>Password</span></a>
+                    <a href="Account.html"><i class="fa-solid fa-house"></i><span>Personal Account</span></a>
+                    <a href="settings.html"><i class="fa-solid fa-house"></i><span>Settings</span></a>
+                </div>
+            </div>
+        </div>
+
+        <section class="account">
+            <div class="head">
+                <h2 class="account-heading">Account</h2>
+                <h2 class="title">Notifications 
+                    <span>8</span> <i class="fa-solid fa-bell" onclick="toggleNotifications()"></i> </h2> 
+            </div>
+
+            <div class="account-section">
+                <div class="account1">
+                    <div class="box">
+                        <span>Full name <br> <p>adesipe sodiq</p></span>
+                        <a href="settings.html">Edit</a>
+                    </div>
+    
+                    <div class="box">
+                        <span>Account Email <br> <p>sodiqadesipe@gmail.com</p></span>
+                        <a href="settings.html">Edit</a>
+                    </div>
+        
+                    <div class="box">
+                        <span>Password <br> <p>........</p></span>
+                        <a href="settings.html">Edit</a>
+                    </div>
+    
+                    <div class="box">
+                        <span>Two Factor Authentication <br> <p>Disabled</p></span>
+                        <a href="settings.html">Enable</a>
+                    </div>
+    
+                    <div class="box">
+                        <span>Registered on <br> <p>06:07- 16th May 2023 </p></span>
+                        <a href="settings.html">Delete Account</a>
+                    </div>
+                </div>
+    
+                <div class="notify" id="notifications">
+                    <div class="notification-box">
+                        <div class="notif_card unread1" id="add">
+                            <img src="images/user-2.png">
+                            <h3>Mark Webber <p>reacted to your recent post</p> My first tournament today! </h3>
+                            <br>
+                            <p>1m ago</p>
+                        </div>
+        
+                        <div class="notif_card unread">
+                            <img src="images/user-2.png">
+                            <h3>Jacob Thompson <p>has joined your group Chess Club</p></h3>
+                            <p>1 day ago</p>
+                        </div>
+        
+                        <p class="text">Hello, thanks for setting up the Chess Club. I've been a member for a few 
+                            weeks now and i'm already having lots of fun and improving my game
+                        </p>
+        
+                        <div class="notif_card">
+                            <img src="images/user-2.png">
+                            <h3>Kimberly Smith <p>commented on your picture</p></h3>
+                            <p>1 week ago</p>
+                        </div>
+
+                        <div class="notif_card">
+                            <img src="images/user-2.png">
+                            <h3>Anna Kim <p>left the group</p>Chess Club</h3>
+                            <p>2 weeks ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="account-heading2">monthly usage</h2>
+
+            <div class="account2">
+                <span>3 Total Submissions <p>OF 50 MONTHLY LIMIT</p></span>
+            </div>
+
+            <div class="account3">
+                <div class="account-heading3">
+                    <h2>linked emails</h2>
+                    <div class="notifi-box" id="box">
+                        <h2>Add Another Email</h2>
+                        <input type="email" placeholder="email" required>
+                        <button type="submit">ADD</button>
+                    </div>
+                </div>
+                <div class="account-heading4">
+                    <h3>Address</h3>
+                    <h3>status</h3>
+                    <h3>actions</h3>
+                </div>
+                <div class="account-heading5">
+                    <p>sodiqadesipe13@gmail.com</p>
+                    <button class="account-btn" id="add-btn">verified</button>
+                </div>
+                <p>1 of 2 email addresses added. <a href="#">Upgrade</a> to add unlimited addresses.</p>
+            </div>
+
+            <div class="account4">
+                <h3>Upgrade your account for:</h3>
+
+                <ol>
+                    <li>More submissions</li>
+                    <li>Custom "thank you" redirect</li>
+                    <li>Spam filtering</li>
+                    <li>Plugins like Google Sheets, Mailchimp and Stripe</li>
+                    <li>Export and API access.</li>
+                    <li>File upload</li>
+                </ol>
+
+                <p>....and more!</p>
+
+                <button class="account-btn" >See Plans</button>
+            </div>
+        </section>
+    </header>
+
+    <footer class="footer">
+        <div>&copy; copyright @ 2022 by <span>mr. adesipe sodiq</span> | all rights reserved!</div>
+    </footer>
+
+    <script>
+        let body = document.body;
+        let profile = document.querySelector('.header .flex .profile');
+
+        var box = document.getElementById('box');
+        var down = false;
+
+        function toggleNotifi(){
+            if (down){
+                box.style.height = '0px';
+                box.style.opacity = 0;
+                down = false;
+            } else {
+                box.style.height = '150px';
+                box.style.opacity = 1;
+                down = true;
+            }
+        }
+
+        var notifications = document.getElementById('notifications');
+        var down = false;
+
+        function toggleNotifications(){
+            if (down){
+                notifications.style.height = '0px';
+                notifications.style.opacity = 0;
+                down = false;
+            } else {
+                notifications.style.height = '90rem';
+                notifications.style.opacity = 1;
+                down = true;
+            }
+        }
+        window.onscroll = () => {
+            profile.classList.remove('active');
+
+            if (window.innerWidth > 1200) {
+                sideBar.classList.remove('active');
+                addEmail.classList.remove('active');
+            }
+        }
+
+        let sideBar = document.querySelector('.side-bar');
+        let addEmail = document.querySelector('.account-heading3 .add-email');
+
+
+        document.querySelector('#menu-btn').onclick = () => {
+            sideBar.classList.toggle('active'); 
+            body.classList.toggle('active');
+        };
+
+        document.querySelector('.side-bar .close-side-bar').onclick = () =>{
+            sideBar.classList.remove('active');
+            body.classList.remove('active');
+        }
+
+
+        let toggleBtn = document.querySelector('#toggle-btn');
+        let darkMode = localStorage.getItem('dark-mode');
+
+        const enabelDarkMode = () => {
+            toggleBtn.classList.replace('fa-sun', 'fa-moon');
+            body.classList.add('dark');
+            localStorage.setItem('dark-mode', 'enabled');
+        }
+
+        const disableDarkMode = () => {
+            toggleBtn.classList.replace('fa-moon', 'fa-sun');
+            body.classList.remove('dark');
+            localStorage.setItem('dark-mode', 'disabled');
+        }
+
+        if (darkMode === 'enabled') {
+            enabelDarkMode();
+        }
+
+        toggleBtn.onclick = (e) => {
+            let darkMode =localStorage.getItem('dark-mode');
+            if (darkMode === 'disabled') {
+                enabelDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        }
+    </script>
+</body>
+</html>
+                

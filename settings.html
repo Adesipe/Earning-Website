@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="CSS/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <a href="home.html" class="logo">CR.</a>
+
+            <div class="icons">
+                <button id="menu-btn"><i class="fa-solid fa-bars"></i></button>
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="user-btn"><i class="fa-solid fa-user"></i></button>
+                <button id="toggle-btn"><i class="fa-solid fa-gear"></i></button>
+            </div>
+
+            <div class="profile">
+                <img src="images/user.jpeg">
+                <h3>shaikh anas</h3>
+                <span>student</span>
+                <a href="profile.html" class="btn">view profile</a>
+                <div class="flex-btn">
+                    <a href="login.html" class="option-btn">login</a>
+                    <a href="register.html" class="option-btn">register</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="side-bar">
+            <div class="close-side-bar">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="profile">
+                <img src="images/user.jpeg">
+                <h3>shaikh anas</h3>
+                <span>student</span>
+                <a href="profile.html" class="btn">view profile</a>
+                <div class="navbar">
+                    <a href="chart.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                    <a href="contact.html"><i class="fa-solid fa-house"></i><span>Contact</span></a>
+                    <a href="settings.html#password"><i class="fa-solid fa-house"></i><span>Password</span></a>
+                    <a href="Account.html"><i class="fa-solid fa-house"></i><span>Personal Account</span></a>
+                    <a href="settings.html"><i class="fa-solid fa-house"></i><span>Settings</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="CTA">
+            <h1>Get $10</h1>
+        </div>
+
+        <div class="leftbox">
+            <nav>
+                <a href="#" onclick="tabs(0)" class="tab active">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="#" onclick="tabs(1)" class="tab active">
+                    <i class="fa-solid fa-credit-card"></i>
+                </a>
+                <a href="#" onclick="tabs(2)" class="tab active">
+                    <i class="fa-solid fa-tv"></i>
+                </a>
+                <a href="#" onclick="tabs(3)" class="tab active">
+                    <i class="fa-solid fa-list-check"></i>
+                </a>
+                <a href="#" onclick="tabs(4)" class="tab active">
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+            </nav>
+        </div>
+
+        <div class="rightbox">
+            <div class="profile tabShow" id="password">
+                <h1>Personal Info</h1>
+                <h2>Full Name</h2>
+                <input type="text" class="input" value="Jane Doe">
+                <h2>Birthday</h2>
+                <input type="text" class="input" value="April 20, 1992">
+                <h2>Gender</h2>
+                <input type="text" class="input" value="Female">
+                <h2>Email</h2>
+                <input type="email" class="input" value="example@example.com">
+                <h2>password</h2>
+                <input type="password" class="input" value="brightcode">
+                <button class="btn">Update</button>
+            </div>
+
+            <div class="subscription tabShow">
+                <h1>Payment Info</h1>
+                <h2>Payment Date</h2>
+                <p>May 12, 2019</p>
+                <h2>Next Charges</h2>
+                <p>$80.56 <span>includes tax</span></p>
+                <h2>Plan</h2>
+                <p>Limited Plan</p>
+                <h2>Monthly</h2>
+                <button class="btn">Update</button>
+            </div>
+
+            <div class="privacy tabShow">
+                <h1>Privacy Settings</h1>
+                <h2>Manage Email Noti.</h2>
+                <p></p>
+                <h2>Manage Privacy Settings</h2>
+                <p></p>
+                <h2>View Terms Of Use</h2>
+                <p></p>
+                <h2>Personalized Ad Experience</h2>
+                <p></p>
+                <h2>Protect Account</h2>
+                <p></p>
+                <button class="btn">Update</button>
+            </div>
+
+            <div class="settings tabShow">
+                <h1>Account Settings</h1>
+                <h2>Sync WatchList</h2>
+                <p></p>
+                <h2>Hold Subscriptions</h2>
+                <p></p>
+                <h2>Cancel Subscriptions</h2>
+                <p></p>
+                <h2>Your Devices</h2>
+                <p></p>
+                <h2>Referrals</h2>
+                <p></p>
+                <button class="btn">Update</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabBtn = document.querySelectorAll(".tab");
+        const tab = document.querySelectorAll(".tabShow"); {
+            function tabs(panelIndex) {
+                tab.forEach(function (node) {
+                    node.style.display = "none";
+                });
+                tab[panelIndex].style.display = "block";
+            }
+            tabs(0);
+        }
+    </script>
+
+    <script>
+        let body = document.body;
+        let profile = document.querySelector('.header .flex .profile');
+
+        document.querySelector('#user-btn').onclick = () => {
+            profile.classList.toggle('active');
+        }
+
+        window.onscroll = () => {
+            profile.classList.remove('active');
+
+            if (window.innerWidth > 1200) {
+                sideBar.classList.remove('active');
+            }
+        }
+
+        let sideBar = document.querySelector('.side-bar');
+
+
+        document.querySelector('#menu-btn').onclick = () => {
+            sideBar.classList.toggle('active'); 
+            body.classList.toggle('active');
+        };
+
+        document.querySelector('.side-bar .close-side-bar').onclick = () =>{
+            sideBar.classList.remove('active');
+            body.classList.remove('active');
+        }
+
+
+        let toggleBtn = document.querySelector('#toggle-btn');
+        let darkMode = localStorage.getItem('dark-mode');
+
+        const enabelDarkMode = () => {
+            toggleBtn.classList.replace('fa-sun', 'fa-moon');
+            body.classList.add('dark');
+            localStorage.setItem('dark-mode', 'enabled');
+        }
+
+        const disableDarkMode = () => {
+            toggleBtn.classList.replace('fa-moon', 'fa-sun');
+            body.classList.remove('dark');
+            localStorage.setItem('dark-mode', 'disabled');
+        }
+
+        if (darkMode === 'enabled') {
+            enabelDarkMode();
+        }
+
+        toggleBtn.onclick = (e) => {
+            let darkMode =localStorage.getItem('dark-mode');
+            if (darkMode === 'disabled') {
+                enabelDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        }
+    </script>
+</body>
+</html>
