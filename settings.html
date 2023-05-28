@@ -47,19 +47,20 @@
                     <a href="chart.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
                     <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
                     <a href="contact.html"><i class="fa-solid fa-house"></i><span>Contact</span></a>
-                    <a href="settings.html#password"><i class="fa-solid fa-house"></i><span>Password</span></a>
+                    <a href="settings.html#resetpassword" onclick="tabs(1)" class="tab active"><i class="fa-solid fa-house"></i><span>Password</span></a>
                     <a href="Account.html"><i class="fa-solid fa-house"></i><span>Personal Account</span></a>
-                    <a href="settings.html"><i class="fa-solid fa-house"></i><span>Settings</span></a>
+                    <a href="settings.html#usersetting" onclick="tabs(0)" class="tab active"  ><i class="fa-solid fa-house"></i><span>Settings</span></a>
                 </div>
             </div>
         </div>
     </header>
 
+
     <div class="container">
         <div class="CTA">
             <h1>Get $10</h1>
         </div>
-
+<!-- `
         <div class="leftbox">
             <nav>
                 <a href="#" onclick="tabs(0)" class="tab active">
@@ -78,24 +79,37 @@
                     <i class="fa-solid fa-gear"></i>
                 </a>
             </nav>
-        </div>
+        </div> -->
+
 
         <div class="rightbox">
-            <div class="profile tabShow" id="password">
-                <h1>Personal Info</h1>
-                <h2>Full Name</h2>
+            <div class="profile tabShow" id="usersetting">
+                <h1>Personal Info</h1><br>
+                <h2>Full Name</h2><br>
                 <input type="text" class="input" value="Jane Doe">
-                <h2>Birthday</h2>
+                <h2>Birthday</h2><br>
                 <input type="text" class="input" value="April 20, 1992">
-                <h2>Gender</h2>
+                <h2>Gender</h2><br>
                 <input type="text" class="input" value="Female">
-                <h2>Email</h2>
+                <h2>Email</h2><br>
                 <input type="email" class="input" value="example@example.com">
-                <h2>password</h2>
-                <input type="password" class="input" value="brightcode">
+                <h2>password</h2><br>
+                <input type="password" class="input" value="brightcode"> <br><br>
                 <button class="btn">Update</button>
             </div>
 
+
+            <div class="subscription">
+                <div class="profile tabShow" id="resetpassword">
+                    <h1>Change your password</h1><br>
+                    <input type="text" class="input" value="Female">
+                    <h2>Old Password</h2><br>
+                    <input type="email" class="input" value="example@example.com">
+                    <h2>New Password</h2><br>
+                    <input type="password" class="input" value="brightcode"> <br><br>
+                    <button class="btn">Reset Password</button>
+                </div>
+<!-- 
             <div class="subscription tabShow">
                 <h1>Payment Info</h1>
                 <h2>Payment Date</h2>
@@ -136,9 +150,10 @@
                 <h2>Referrals</h2>
                 <p></p>
                 <button class="btn">Update</button>
-            </div>
+            </div> -->
         </div>
     </div>
+
 
     <script>
         const tabBtn = document.querySelectorAll(".tab");
@@ -152,6 +167,7 @@
             tabs(0);
         }
     </script>
+
 
     <script>
         let body = document.body;
