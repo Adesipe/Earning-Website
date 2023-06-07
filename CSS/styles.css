@@ -309,6 +309,44 @@ section {
     max-width: 1200px;
     margin: 0 auto;
 }
+.row .profit {
+    margin-top: 20px;
+    height: 80px;
+}
+.row .profit .take-profits {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.row .profit .profit-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 2px solid var(--main-color);
+}
+.row .profit .profit-timer .countdown {
+    font-size: 2rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 5px;
+    border-radius: 5px;
+}
+.row .profit .profit-button .button {
+    height: 28px;
+    font-size: 2.5em;
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.row .profit .profit-button .button:hover {
+    background-color: var(--black);
+}
 .row .Dashboard {
     display: flex;
     align-content: space-between;
